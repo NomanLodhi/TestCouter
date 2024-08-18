@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: purple;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; 
+        }
+         body h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: gold;
+            font-size: 50px;
+           
+         }   
+         body textarea{
+            background-color: transparent;
+            color: goldenrod;
+            width: 80%;
+            border: 2px solid gold;
+            border-radius: 30px;
+            height: 300px;
+            padding: 10px;
+        }
+        #alert{
+            background-color: red;
+            border: 2px solid gold;
+            margin: 20px;
+            padding: 20px 10px;
+            width: 80%;
+            text-align: center;
+            color: gold;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 30px;
+            display: none;
+       }
+    </style>
+</head>
+<body>
+    <h1>You can enter text of 50 characters only </h1>
+    <h1 >Total Characters: <span id="Charcount"></span></h1>
+    <textarea name="" id="inputField"></textarea>
+    <div id="alert">You have accessed the limit</div>
+</body>
+
+<script>
+    let inputField=document.getElementById('inputField');
+    let charCount=document.getElementById('Charcount');
+    let alertMessage=document.getElementById('alert');
+    inputField.addEventListener('keydown',()=>{
+        let charDigit=inputField.value;
+        charCount.innerHTML=charDigit.length
+ if(charDigit.length>=50){
+    inputField.style.display='none'
+    alertMessage.style.display='block'
+ }
+    })
+</script>
+</html>
